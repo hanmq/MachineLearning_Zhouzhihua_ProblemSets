@@ -4,6 +4,7 @@
 尝试了两种优化方法，梯度下降和牛顿法。两者结果基本相同，不过有时因初始化的原因，
 会导致牛顿法中海森矩阵为奇异矩阵，np.linalg.inv(hess)会报错。以后有机会再写拟牛顿法吧。
 '''
+
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -194,3 +195,4 @@ if __name__ == '__main__':
 
     plt.legend(loc='upper right')
     plt.show()
+
