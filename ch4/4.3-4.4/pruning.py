@@ -6,6 +6,9 @@ def post_pruning(X_train, y_train, X_val, y_val, tree_=None):
     if tree_.is_leaf:
         return tree_
 
+    if X_val.empty:         # 验证集为空集时，不再剪枝
+        return tree_
+
     most_common_in_train = pd.value_counts(y_train).index[0]
     current_accuracy = np.mean(y_val == most_common_in_train)  # 当前节点下验证集样本准确率
 
@@ -20,8 +23,7 @@ def post_pruning(X_train, y_train, X_val, y_val, tree_=None):
                                   tree_.subtree['>= {:.3f}'.format(tree_.split_value)])
         tree_.subtree['>= {:.3f}'.format(tree_.split_value)] = up_subtree
         down_subtree = post_pruning(X_train[down_part_train], y_train[down_part_train],
-                                    X_val[down_part_val],
-                                    y_val[down_part_val],
+                                    X_val[down_part_val], y_val[down_part_val],
                                     tree_.subtree['< {:.3f}'.format(tree_.split_value)])
         tree_.subtree['< {:.3f}'.format(tree_.split_value)] = down_subtree
 
@@ -76,6 +78,8 @@ def pre_pruning(X_train, y_train, X_val, y_val, tree_=None):
     if tree_.is_leaf:  # 若当前节点已经为叶节点，那么就直接return了
         return tree_
 
+    if X_val.empty: # 验证集为空集时，不再剪枝
+        return tree_
     # 在计算准确率时，由于西瓜数据集的原因，好瓜和坏瓜的数量会一样，这个时候选择训练集中样本最多的类别时会不稳定（因为都是50%），
     # 导致准确率不稳定，当然在数量大的时候这种情况很少会发生。
 
