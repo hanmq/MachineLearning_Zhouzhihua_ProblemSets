@@ -13,14 +13,14 @@ total_high = None
 def plot_node(node_text, center_pt, parent_pt, node_type, ax_):
     ax_.annotate(node_text, xy=[parent_pt[0], parent_pt[1] - 0.02], xycoords='axes fraction',
                  xytext=center_pt, textcoords='axes fraction',
-                 va="center", ha="center", size=24,
+                 va="center", ha="center", size=15,
                  bbox=node_type, arrowprops=arrow_args)
 
 
 def plot_mid_text(mid_text, center_pt, parent_pt, ax_):
     x_mid = (parent_pt[0] - center_pt[0]) / 2 + center_pt[0]
     y_mid = (parent_pt[1] - center_pt[1]) / 2 + center_pt[1]
-    ax_.text(x_mid, y_mid, mid_text, fontdict=dict(size=15))
+    ax_.text(x_mid, y_mid, mid_text, fontdict=dict(size=10))
 
 
 def plot_tree(my_tree, parent_pt, node_text, ax_):
