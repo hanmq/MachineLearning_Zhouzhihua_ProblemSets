@@ -51,6 +51,14 @@ class BpNN(object):
         if not hasattr(self, "parameters_"):
             raise Exception('you have to fit first before predict.')
 
+        a_last, _ = self.forward_L_layer(X_, self.parameters_)
+        if a_last.shape[1] == 1:
+            predict_ = np.zeros(a_last.shape)
+            predict_[a_last>=0.5] = 1
+        else:
+            predict_ = np.argmax(a_last, axis=1)
+        return predict_
+
     def compute_cost(self, y_hat_, y_):
         if y_.ndim == 1:
             y_ = y_.reshape(-1, 1)
