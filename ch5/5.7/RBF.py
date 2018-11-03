@@ -30,11 +30,11 @@ def RBF_backward(a_, y_, x_c, p_, parameters_):
     beta = parameters_['beta']
     W = parameters_['W']
 
-    da = (a_ - y_)
+    da = (a_ - y_)      # 损失函数对输出层的偏导 ，这里的a其实对应着  输出层的y_hat
 
     dw = np.dot(da.T, p_) / m
     db = np.sum(da, axis=0, keepdims=True) / m
-    dp = np.dot(da, W)
+    dp = np.dot(da, W)   # dp即损失函数对隐藏层激活值的偏导
 
     dbeta = np.sum(dp * p_ * (-x_c), axis=0, keepdims=True) / m
 
@@ -54,6 +54,15 @@ def compute_cost(y_hat_, y_):
 
 
 def RBF_model(X_, y_, learning_rate, num_epochs, t):
+    '''
+
+    :param X_:
+    :param y_:
+    :param learning_rate:  学习率
+    :param num_epochs:     迭代次数
+    :param t:   隐藏层节点数量
+    :return:
+    '''
     parameters = {}
     np.random.seed(16)
     # 定义中心点，本来这里的中心点应该由随机采用或者聚类等非监督学习来获得的，这里为了简单就直接定义好了
