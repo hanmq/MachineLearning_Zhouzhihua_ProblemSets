@@ -35,12 +35,12 @@ def plt_support_(clf, X_, y_, kernel, c):
     ax.scatter(X_[pos, 0], X_[pos, 1], label='1', color='c')
     ax.scatter(X_[neg, 0], X_[neg, 1], label='0', color='lightcoral')
 
-    ax.scatter(X_[clf.support_, 0], X_[clf.support_, 1], marker='o', c='', edgecolors='g', s=150, label='support_vectors')
+    ax.scatter(X_[clf.support_, 0], X_[clf.support_, 1], marker='o', c='', edgecolors='g', s=150,
+               label='support_vectors')
 
     ax.legend()
     ax.set_title('{} kernel, C={}'.format(kernel, c))
     plt.show()
-
 
 
 path = r'C:\Users\hanmi\Documents\xiguabook\watermelon3_0a_Ch.txt'
@@ -67,9 +67,6 @@ print('线性核：')
 print('预测值：', clf_linear.predict(X))
 print('真实值：', y.astype(int))
 print('支持向量：', clf_linear.support_)
-
-
-
 
 plt_support_(clf_rbf, X, y, 'rbf', C)
 
