@@ -57,8 +57,8 @@ def predict_nb(x, p1, p1_list, p0_list):
         if p1_xi.is_continuous:
             mean1, var1 = p1_xi.conditional_pro
             mean0, var0 = p0_xi.conditional_pro
-            x_p1 += np.log(1 / (np.sqrt(np.pi) * var1) * np.exp(- (x[i] - mean1) ** 2 / (2 * var1 ** 2)))
-            x_p0 += np.log(1 / (np.sqrt(np.pi) * var0) * np.exp(- (x[i] - mean0) ** 2 / (2 * var0 ** 2)))
+            x_p1 += np.log(1 / (np.sqrt(2 * np.pi) * var1) * np.exp(- (x[i] - mean1) ** 2 / (2 * var1 ** 2)))
+            x_p0 += np.log(1 / (np.sqrt(2 * np.pi) * var0) * np.exp(- (x[i] - mean0) ** 2 / (2 * var0 ** 2)))
         else:
             x_p1 += p1_xi.conditional_pro[x[i]]
             x_p0 += p0_xi.conditional_pro[x[i]]
