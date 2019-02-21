@@ -1,0 +1,12 @@
+__init__.py
+.idea/
+.idea
+.cache
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.so
+*.egg
+*.egg-info
+dist
+build
