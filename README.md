@@ -24,6 +24,6 @@
 
 ### 第七章 贝叶斯分类
 
-[朴素贝叶斯](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch7--%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/7.3)
+[朴素贝叶斯](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch7--%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/7.3)   
 [半朴素贝叶斯-AODE](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch7--%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/7.6)
 
