@@ -10,3 +10,5 @@ Desktop.ini
 *.egg-info
 dist
 build
+test.py
+__pycache__
