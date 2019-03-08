@@ -27,3 +27,6 @@
 [朴素贝叶斯](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch7--%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/7.3)   
 [半朴素贝叶斯-AODE](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch7--%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/7.6)
 
+### 第八章 集成学习
+[AdaBoost](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch8--%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/8.3-AdaBoost.py)   
+[决策树桩Bagging](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch8--%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/8.5-StumpBagging.py)
