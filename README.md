@@ -30,3 +30,6 @@
 ### 第八章 集成学习
 [AdaBoost](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch8--%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/8.3-AdaBoost.py)   
 [决策树桩Bagging](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch8--%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/8.5-StumpBagging.py)
+
+### 第九章 聚类
+[KMeans](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch9--%E8%81%9A%E7%B1%BB/9.4-KMeans.py)   
