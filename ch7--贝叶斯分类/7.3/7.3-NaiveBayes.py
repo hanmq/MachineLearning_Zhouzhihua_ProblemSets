@@ -6,7 +6,7 @@ from collections import namedtuple
 
 def train_nb(X, y):
     m, n = X.shape
-    p1 = (len(y[y == 1]) + 1) / (m + 2)  # 拉普拉斯平滑
+    p1 = (len(y[y == '是']) + 1) / (m + 2)  # 拉普拉斯平滑
 
     p1_list = []  # 用于保存正例下各属性的条件概率
     p0_list = []
