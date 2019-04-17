@@ -1,9 +1,9 @@
 #### 3.1 试分析在什么情况下，在以下式子中不比考虑偏置项b。
-答：   
+**答：**   
 在样本 $ x $ 中有某一个属性 $ x_{i} $ 为固定值时。那么此时 $ w_{i}x_{i}+b $ 等价于偏置项，此时 $ w_{i}x_{i}+b $与 $ b $等价。
 
 #### 3.2 试证明，对于参数 ，对率回归（logistics回归）的目标函数（3.18）是非凸的，但其对数似然函数（3.27）是凸的。
-答：   
+**答：**   
 3.18： $ y = \frac{1}{1 + e^{-(w^{T}x+b)}} $，
 
 3.27：  $ l(\beta)=\sum_{i=1}^{m}lnp(y_{i}|x_{i};w, b) $。
@@ -23,23 +23,23 @@ $ \frac{\partial^{2}{l(\beta)}}{\partial{\beta}\partial{\beta^{T}}}=\sum_{i=1}^{
 显然当在(0,1)之间变化时，特征值正负号会发生变化，于是3.18式关于 $ w $ 的海森矩阵非半正定，因此非凸。
 
 #### 3.3 编程实现对率回归，并给出西瓜数据集3.0α上的结果
-答：   
+**答：**   
 见[3.3](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/3.3)
 
 #### 3.4 选择两个 UCI 数据集，比较 10 折交叉验证法和留一法所估计出的对率回归的错误率。
-答：   
+**答：**   
 见[3.4](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/3.4)
 
 #### 3.5 编辑实现线性判别分析，并给出西瓜数据集 3.0α 上的结果.
-答：   
+**答：**   
 见[3.5](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/3.5)
 
 #### 3.6 线性判别分析仅在线性可分数据上能获得理想结果，试设计一个改进方法，使其能较好地周于非线性可分数据。
-答：   
+**答：**   
 引入核函数，原书p137，有关于核线性判别分析的介绍。
 
 #### 3.7 令码长为 9，类别数为 4，试给出海明距离意义下理论最优的 ECOC二元码并证明之。
-答：   
+**答：**   
 原书对很多地方解释没有解释清楚，把原论文看了一下《Solving Multiclass Learning Problems via Error-Correcting Output Codes》。
 
 先把几个涉及到的理论解释一下。
@@ -49,7 +49,7 @@ $ \frac{\partial^{2}{l(\beta)}}{\partial{\beta}\partial{\beta^{T}}}=\sum_{i=1}^{
 >对同等长度的编码，理论上来说，任意两个类别之间的编码距离越远，则纠错能力越强。因此，在码长较小时可根据这个原则计算出理论最优编码。
 
 其实这一点在论文中也提到，“假设任意两个类别之间最小的海明距离为 d ，那么此纠错输出码最少能矫正 $ \left[ \frac{d-1}{2} \right] $ 位的错误。   
-
+![1](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/1.jpg)   
 拿上图论文中的例子解释一下，上图中，所有类别之间的海明距离都为4，
 假设一个样本正确的类别为 c1 ，那么codeword应该为 ‘0 0 1 1 0 0 1 1’，
 若此时有一个分类器输出错误，变成‘0 0 0 1 0 0 1 1’，那么此时距离最近的仍然为 c1 ，
@@ -77,12 +77,14 @@ $ \frac{\partial^{2}{l(\beta)}}{\partial{\beta}\partial{\beta^{T}}}=\sum_{i=1}^{
 就只剩下三种编码选择了，所以很难满足上述的条件。事实上，对于 k 种类别的分类，
 再去除反码和全是0或者1的编码后，就剩下 $ 2^{k}-1 $ 中可行的编码。   
 原论文中给出了构造编码的几种方法。其中一个是：   
+![2](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/2.jpg)   
 回到题目上，在类别为4时，其可行的编码有7种，按照上述方法有：   
+![3](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/3.jpg)
 当码长为9时，那么 $ f_{6} $ 之后加任意两个编码，即为最优编码，
 因为此时再加任意的编码都是先有编码的反码，此时，类别之间最小的海明距离都为4，不会再增加。
 
 #### 3.8 ECOC 编码能起到理想纠错作用的重要条件是：在每一位编码上出错的概率相当且独立。试析多分类任务经 ECOC 编码后产生的二类分类器满足该条件的可能性及由此产生的影响。
-答：   
+**答：**   
 条件分解为两个：一是出错的概率相当，二是出错的可能性相互独立。
 
 先看第一个把，其实就是每个一位上的分类器的泛化误差相同，要满足这个条件其实取决于样本之间的区分难度，
@@ -98,12 +100,12 @@ $ \frac{\partial^{2}{l(\beta)}}{\partial{\beta}\partial{\beta^{T}}}=\sum_{i=1}^{
 >一个理论纠错牲质很好、但导致的三分类问题较难的编码，与另一个理论纠错性质差一些、但导致的二分类问题较简单的编码，最终产生的模型性能孰强孰弱很难说。
 
 #### 3.9 使用 OvR 和 MvM 将多分类任务分解为二分类任务求解时，试述为何无需专门针对类别不平衡性进行处理。
-答：
+**答：**
 
 题目真看不懂。有机会再填坑。
 
 #### 3.10 试推导出多分类代价敏感学习(仅考虑基于类别的误分类代价)使用"再缩放"能获得理论最优解的条件。
-答：
+**答：**
 
 这道题目其实是周志华教授的一篇论文《On Multi-Class Cost-Sensitive Learning》。把论文理论部分读了一遍。现在尝试概述一遍吧。
 
@@ -116,7 +118,7 @@ $ p \ast cost_{11}+(1-p)cost_{21} $ 表示分类器将样本预测为1类的期�
 即可得到最优决策阈值有 $ \frac{p^{\ast}}{1-p^{\ast}}=\frac{cost_{21}}{cost_{12}} $ ，
 即 $ p^{*}=\frac{cost_{21}}{cost_{12}+cost_{21}} $ 。在《On Multi-Class Cost-Sensitive Learning》中，
 引用了另外一篇论文《The Foundations of Cost-Sensitive Learning》的一个理论：   
-
+![7](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/7.jpg)   
 通过这个理论来推导出在代价敏感学习中，最优“再缩放”之后，各类别的权重应该满足的条件。
 看了原论文才看懂这个理论表达的意思。。关于理论的证明有兴趣可以再看看原论文，这里就不再复述一遍了。
 它想说的是，假设有一个算法 $ L $ 生成的分类器是以 $ p_{0} $ 为决策阈值，
@@ -127,8 +129,9 @@ $ p \ast cost_{11}+(1-p)cost_{21} $ 表示分类器将样本预测为1类的期�
 相比于一类，二类的再缩放比例应该为一类的 $ \frac{p^{\ast}}{1-p^{\ast}}=\frac{cost_{21}}{cost_{12}} $ 倍，
 表示一类的影响力为二类影响力的 $ \frac{cost_{12}}{cost_{21}} $ 的倍。以 $ w_{i} $ 表示对第 $ i $ 的再缩放比率，
 推广到多分类时“再缩放”获得最优理论解就应满足：   
+![4](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/4.jpg)   
 即：
-
+![5](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/5.jpg)   
 方程组有解。
-
+![6](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/6.jpg)
 其伴随矩阵秩小于c。
