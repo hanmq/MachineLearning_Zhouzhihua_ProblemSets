@@ -1,9 +1,11 @@
 #### 3.1 试分析在什么情况下，在以下式子中不比考虑偏置项b。
 **答：**   
+
 在样本 $ x $ 中有某一个属性 $ x_{i} $ 为固定值时。那么此时 $ w_{i}x_{i}+b $ 等价于偏置项，此时 $ w_{i}x_{i}+b $与 $ b $等价。
 
 #### 3.2 试证明，对于参数 ，对率回归（logistics回归）的目标函数（3.18）是非凸的，但其对数似然函数（3.27）是凸的。
 **答：**   
+
 3.18： $ y = \frac{1}{1 + e^{-(w^{T}x+b)}} $，
 
 3.27：  $ l(\beta)=\sum_{i=1}^{m}lnp(y_{i}|x_{i};w, b) $。
@@ -24,22 +26,27 @@ $ \frac{\partial^{2}{l(\beta)}}{\partial{\beta}\partial{\beta^{T}}}=\sum_{i=1}^{
 
 #### 3.3 编程实现对率回归，并给出西瓜数据集3.0α上的结果
 **答：**   
+
 见[3.3](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/3.3)
 
 #### 3.4 选择两个 UCI 数据集，比较 10 折交叉验证法和留一法所估计出的对率回归的错误率。
 **答：**   
+
 见[3.4](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/3.4)
 
 #### 3.5 编辑实现线性判别分析，并给出西瓜数据集 3.0α 上的结果.
 **答：**   
+
 见[3.5](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/3.5)
 
 #### 3.6 线性判别分析仅在线性可分数据上能获得理想结果，试设计一个改进方法，使其能较好地周于非线性可分数据。
 **答：**   
+
 引入核函数，原书p137，有关于核线性判别分析的介绍。
 
 #### 3.7 令码长为 9，类别数为 4，试给出海明距离意义下理论最优的 ECOC二元码并证明之。
 **答：**   
+
 原书对很多地方解释没有解释清楚，把原论文看了一下《Solving Multiclass Learning Problems via Error-Correcting Output Codes》。
 
 先把几个涉及到的理论解释一下。
