@@ -56,6 +56,7 @@ $ \frac{\partial^{2}{l(\beta)}}{\partial{\beta}\partial{\beta^{T}}}=\sum_{i=1}^{
 若有两个分类输出错误如‘0 0 0 0 0 0 1 1’，此时与 c1,c2 的海明距离都为2，无法正确分类。
 即任意一个分类器将样本分类错误，最终结果依然正确，但如果有两个以上的分类器错误，
 结果就不一定正确了。这是 $ \left[ \frac{d-1}{2} \right] $ 的由来。   
+
 此外，原论文中提到，一个好的纠错输出码应该满足两个条件：
 - 行分离。任意两个类别之间的codeword距离应该足够大。
 - 列分离。任意两个分类器 $ f_{i},f_{j} $ 的输出应相互独立，无关联。这一点可以通过使分类器 f_{i} 编码与其他分类编码的海明距离足够大实现，且与其他分类编码的反码的海明距离也足够大（有点绕。）。   
@@ -68,18 +69,21 @@ $ \frac{\partial^{2}{l(\beta)}}{\partial{\beta}\partial{\beta^{T}}}=\sum_{i=1}^{
 极端情况，假设增加两个相同的编码，此时任意两个类别之间最小的海明距离不会变化依然为 d ，
 而纠错输出码输出的codeword与真实类别的codeword的海明距离激增（从1变成3）。
 所以如果有过多同时发出的错误分类，会导致纠错输出码失效。   
+
 另外，两个分类器的编码也不应该互为反码，因为很多算法（比如C4.5，逻辑回归）对待0-1分类其实是对称的，
 即将0-1类互换，最终训练出的模型是一样的。也就是说两个编码互为补码的分类器是会同时犯错的。
 同样也会导致纠错输出码失效。   
+
 当然当类别较少时，很难满足上面这些条件。
 如上图中，一共有三类，那么只有 $ 2^{3}=8 $ 中可能的分类器编码 $ f_{0}-f{7} $ ，
 其中后四种 $ f_{4}-f_{7} $ 是前四种的反码，都应去除，再去掉全为0的 $ f_{0} $ ，
 就只剩下三种编码选择了，所以很难满足上述的条件。事实上，对于 k 种类别的分类，
 再去除反码和全是0或者1的编码后，就剩下 $ 2^{k}-1 $ 中可行的编码。   
+
 原论文中给出了构造编码的几种方法。其中一个是：   
 ![2](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/2.jpg)   
 回到题目上，在类别为4时，其可行的编码有7种，按照上述方法有：   
-![3](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/3.jpg)
+![3](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/3.jpg)   
 当码长为9时，那么 $ f_{6} $ 之后加任意两个编码，即为最优编码，
 因为此时再加任意的编码都是先有编码的反码，此时，类别之间最小的海明距离都为4，不会再增加。
 
@@ -102,7 +106,7 @@ $ \frac{\partial^{2}{l(\beta)}}{\partial{\beta}\partial{\beta^{T}}}=\sum_{i=1}^{
 #### 3.9 使用 OvR 和 MvM 将多分类任务分解为二分类任务求解时，试述为何无需专门针对类别不平衡性进行处理。
 **答：**
 
-题目真看不懂。有机会再填坑。
+题目真看不懂。
 
 #### 3.10 试推导出多分类代价敏感学习(仅考虑基于类别的误分类代价)使用"再缩放"能获得理论最优解的条件。
 **答：**
@@ -130,8 +134,8 @@ $ p \ast cost_{11}+(1-p)cost_{21} $ 表示分类器将样本预测为1类的期�
 表示一类的影响力为二类影响力的 $ \frac{cost_{12}}{cost_{21}} $ 的倍。以 $ w_{i} $ 表示对第 $ i $ 的再缩放比率，
 推广到多分类时“再缩放”获得最优理论解就应满足：   
 ![4](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/4.jpg)   
-即：
+即：   
 ![5](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/5.jpg)   
-方程组有解。
-![6](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/6.jpg)
+方程组有解。   
+![6](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/image/6.jpg)   
 其伴随矩阵秩小于c。
