@@ -48,38 +48,31 @@ ps.这个例子就是来自该论文，只做了一点翻译工作。论文中�
 
 代码在：[7.3](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch7--%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/7.3)
 
-#### 7.4 实践中使用式 (7.15)决定分类类别时，若数据的维数非常高，则概率连乘 # \prod_{i=1}^{d}P(x_i|c) # 的结果通常会非常接近于 0 从试述防止下溢的可能方案.而导致下溢.
+#### 7.4 实践中使用式 (7.15)决定分类类别时，若数据的维数非常高，则概率连乘 $ \prod_{i=1}^{d}P(x_i|c) $ 的结果通常会非常接近于 0 从试述防止下溢的可能方案.而导致下溢.
 **答：** 
 
 这在p153中已经给出答案了。即取对数将连乘转化为“连加”防止下溢。
 
-即将式（7.15）改为：$ h_{nb}(x)=\begin{equation} 	\mathop{\arg\max}_{\theta}log(P(c))+\sum_{i=1}^{d}log(P(x_i|c)) \end{equation} $ 。
+即将式（7.15）改为：$ h_{nb}(x)=\begin{equation} 	\mathop{\arg\max}_{\theta}log(P(c))+\sum\_{i=1}^{d}log(P(x_i|c)) \end{equation} $ 。
 
 #### 7.5 试证明:二分类任务中两类数据满足高斯分布且方差相同时，线性判别分析产生贝叶斯最优分类器.
 **答：** 
 
 首先看一下贝叶斯最优分类器：在书中p148中解释了对于最小化分类错误率的贝叶斯最优分类器可表示为： 
-$ h^{\ast}(x)=\begin{equation} 	\mathop{\arg\max}_{c\in y}P(c|x) \end{equation} $，
-由贝叶斯定理即转换为： $ h^{\ast}(x)=\begin{equation} 	\mathop{\arg\max}_{c\in y}P(x|c)P(c) \end{equation} $ 。
+$ h^{\ast}(x)=\begin{equation} 	\mathop{\arg\max}\_{c\in y}P(c|x) \end{equation} $，
+由贝叶斯定理即转换为： $ h^{\ast}(x)=\begin{equation} 	\mathop{\arg\max}\_{c\in y}P(x|c)P(c) \end{equation} $ 。
 那么在数据满足高斯分布时有： 
-$$
-h^*(x)=\begin{equation} 	\mathop{\arg\max}_{c\in y}P(x|c)P(c) \end{equation}
-\\ 
-=\begin{equation} 	\mathop{\arg\max}_{c\in y}log(f(x|c)P(c) )\end{equation}
-\\ 
-=\begin{equation} 	\mathop{\arg\max}_{c\in y}log(\frac{1}{(2\pi)^{n/2}\left| \Sigma \right|^{1/2}}exp(-\frac{1}{2}(x-\mu_c)^T \Sigma^{-1}(x-\mu_c))) + log(P(c))\end{equation} 
-\\
-=\begin{equation} 	\mathop{\arg\max}_{c\in y} -\frac{1}{2}(x-\mu_c)^T \Sigma^{-1}(x-\mu_c) + log(P(c)) \end{equation} 
-\\
-=\begin{equation} 	\mathop{\arg\max}_{c\in y} x^T\Sigma^{-1}\mu_c - \frac{1}{2}\mu_c^T\Sigma^{-1}\mu_c + log(P(c)) \end{equation} 
-$$
 
-在二分类任务中，贝叶斯决策边界可表示为 
-$$
-g(x)= x^T\Sigma^{-1}\mu_1 -x^T\Sigma^{-1}\mu_0 -  (\frac{1}{2}\mu_1^T\Sigma^{-1}\mu_1 - \frac{1}{2}\mu_0^T\Sigma^{-1}\mu_0) +  log(\frac{P(1)}{P(0)})
-\\
-=x^T\Sigma^{-1}(\mu_1-\mu_0)- \frac{1}{2}(\mu_1+\mu_0)^T\Sigma^{-1}(\mu_1-\mu_0) +\log(\frac{P(1)}{P(0)})
-$$
+$ h^*(x)=\begin{equation} 	\mathop{\arg\max}_{c\in y}P(x|c)P(c) \end{equation} $
+$ =\begin{equation} 	\mathop{\arg\max}\_{c\in y}log(f(x|c)P(c) )\end{equation} $
+$ =\begin{equation} 	\mathop{\arg\max}\_{c\in y}log(\frac{1}{(2\pi)^{n/2}\left| \Sigma \right|^{1/2}}exp(-\frac{1}{2}(x-\mu_c)^T \Sigma^{-1}(x-\mu_c))) + log(P(c))\end{equation} $ 
+$ =\begin{equation} 	\mathop{\arg\max}\_{c\in y} -\frac{1}{2}(x-\mu_c)^T \Sigma^{-1}(x-\mu_c) + log(P(c)) \end{equation} $ 
+$ =\begin{equation} 	\mathop{\arg\max}\_{c\in y} x^T\Sigma^{-1}\mu_c - \frac{1}{2}\mu_c^T\Sigma^{-1}\mu_c + log(P(c)) \end{equation} $ 
+
+在二分类任务中，贝叶斯决策边界可表示为    
+$ g(x)= x^T\Sigma^{-1}\mu_1 -x^T\Sigma^{-1}\mu_0 -  (\frac{1}{2}\mu_1^T\Sigma^{-1}\mu_1 - \frac{1}{2}\mu_0^T\Sigma^{-1}\mu_0) +  log(\frac{P(1)}{P(0)}) $
+$ =x^T\Sigma^{-1}(\mu_1-\mu_0)- \frac{1}{2}(\mu_1+\mu_0)^T\Sigma^{-1}(\mu_1-\mu_0) +\log(\frac{P(1)}{P(0)}) $
+
 
 再看看线性判别分析：
 
@@ -102,7 +95,7 @@ $$
 
 另外，虽然在样本这么小的情况下，看预测结果实际意义不大，但相比于朴素贝叶斯，AODE对于西瓜数据集的拟合更好（错误率更低）。
     
-ps.书中给出的式(7.24)有错误的，分母的N_i 改正为 N\times N_i ，在第十次印刷的时候纠正了，看旧版书的同学要注意了。
+ps.书中给出的式(7.24)有错误的，分母的 $ N_i $ 改正为 $ N\times N_i $ ，在第十次印刷的时候纠正了，看旧版书的同学要注意了。
 
 #### 7.7 给定 d 个二值属性的二分类任务，假设对于任何先验概率项的估算至少需 30 个样例，则在朴素贝叶斯分类器式 (7.15) 中估算先验概率项 $ P(c) $ 需 30 x 2 = 60 个样例.试估计在 AODE 式 (7.23) 中估算先验概率项 $ P(c,x_i) $ 所需的样例数(分别考虑最好和最坏情形) .
 **答：** 

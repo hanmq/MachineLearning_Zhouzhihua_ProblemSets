@@ -47,7 +47,7 @@
 图中，令A点到超平面（点B）的距离为 $ \gamma $ ，于是 $ \bar{BA}=\gamma*\frac{w}{\left| w \right|} $ ( $ \frac{w}{\left| w \right|} $ 是 $ w $ 同向的单位向量， 
 对于超平面 $ (w,b) $ 其垂直方向即 $ w $ )，对于B点有： $ w^{T}\bar{B} +b=0 $ ，而 $ \bar{B}= \bar{A}-\bar{BA} $ ，
 于是 $ w^{T}(\bar{A}-\gamma*\frac{w}{\left| w \right|}) + b = 0 $ ，
-可得 $ w^{T}*\bar{A}-\gamma*\left| w \right|+b=0\Rightarrow\gamma=\frac{w^{T}\bar{A}+b}{\left| w \right|} $ ，
+可得 $ w^{T}\ast\bar{A}-\gamma\ast\left| w \right|+b=0\Rightarrow\gamma=\frac{w^{T}\bar{A}+b}{\left| w \right|} $ ，
 这里的 $ \bar{A} $ 即书中 $ x $，即可的式6.2。
 
 ![2](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch6--%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/image/2.jpg)
@@ -171,7 +171,7 @@ $$ \hat{u_{i}}\hat{\xi_{i}}=0, \hat{u_{i}}\geq0, -\hat{\xi_{i}}\leq0 $$
 
 将 $ w_{\ast} $ 分解为与 $ z_{n} $ 空间平行的 $ w_{\lVert} $ 和垂直的 $ w_{\bot} $ ，若 $ w_{\bot}=0 $ 则表示 $ w_{\ast} $ 可以表示为 $ z_{n} $ 的线性组合。
 
-假设 $ w_{\ast} $ 为最优解且 $ w_{\bot}\ne0 $ 。由于 $ w_{\bot} $ 与 $ z_{n} $ 空间垂直，于是 w_{\bot}^{T}z_{n}=0 ， 
+假设 $ w_{\ast} $ 为最优解且 $ w_{\bot}\ne0 $ 。由于 $ w_{\bot} $ 与 $ z_{n} $ 空间垂直，于是 $ w_{\bot}^{T}z_{n}=0 $ ， 
 因此 $ w_{\bot} $ 不会对目标函数中 $ err $ 项的大小产生影响，而对于 $ w_{\ast}^{T}w_{\ast} $ ，
 在 $ w_{\bot}\ne0 $ 的情况下必定有： $ w_{\ast}^{T}w_{\ast}>w_{\lVert}^{T}w_{\lVert} $ ，
 显然 $ w_{\lVert} $ 比 $ w_{\ast} $ “更优”，即 $ w_{\ast} $ 不是最优解。于是原命题得证。

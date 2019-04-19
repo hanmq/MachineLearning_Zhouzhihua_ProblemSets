@@ -1,8 +1,8 @@
-#### 8.1 假设抛硬币正面朝上的概率为 $ p $ ， 反面朝上的概率为 $ 1-p $ 。 令 $ H(n) $ 代表抛 $ n $ 次硬币所得正面朝上的次数，则最多 $ k $ 次正面朝上的概率为 $ P(H(n)\leq k)=\sum_{i=0}^{k}\begin{pmatrix}n\\i\end{pmatrix}p^{i}(1-p)^{n-i} $ . (8.43)对 $ \delta>0,k=(p-\delta)n $ 有： Hoeffding 不等式 $ P(H(n)\leq(p-\delta)n)\leq e^{-2\delta^{2}n} $ . (8.44)试推导8.3。
+#### 8.1 假设抛硬币正面朝上的概率为 $ p $ ， 反面朝上的概率为 $ 1-p $ 。 令 $ H(n) $ 代表抛 $ n $ 次硬币所得正面朝上的次数，则最多 $ k $ 次正面朝上的概率为 $ P(H(n)\leq k)=\sum_{i=0}^{k}\begin{pmatrix}n\i\end{pmatrix}p^{i}(1-p)^{n-i} $ . (8.43)对 $ \delta>0,k=(p-\delta)n $ 有： Hoeffding 不等式 $ P(H(n)\leq(p-\delta)n)\leq e^{-2\delta^{2}n} $ . (8.44)试推导8.3。
 **答：**  
 
-8.3式如下：$ P(H(x)\ne f(x))=\sum_{k=0}^{\lfloor T/2 \rfloor}\begin{pmatrix}T\\k\end{pmatrix}(1-\epsilon)^{k}\epsilon^{T-k}\leq exp(-\frac{1}{2}T(1-2\epsilon)^{2}) $ .
-第一个等式很好理解， $ \begin{pmatrix}T\\k\end{pmatrix}(1-\epsilon)^{k}\epsilon^{T-k} $ 表示 $ T $ 个基分类器中有 $ T-k $ 个分类器预测错误的概率，
+8.3式如下：$ P(H(x)\ne f(x))=\sum_{k=0}^{\lfloor T/2 \rfloor}\begin{pmatrix}T\k\end{pmatrix}(1-\epsilon)^{k}\epsilon^{T-k}\leq exp(-\frac{1}{2}T(1-2\epsilon)^{2}) $ .
+第一个等式很好理解， $ \begin{pmatrix}T\k\end{pmatrix}(1-\epsilon)^{k}\epsilon^{T-k} $ 表示 $ T $ 个基分类器中有 $ T-k $ 个分类器预测错误的概率，
 $ \sum_{k=0}^{\lfloor T/2 \rfloor} $ 即将所有 $ H(x)\ne f(x) $ 下可能预测错误的基分类器个数遍历取总。
 或者可以直接套用8.43式，$ P(H(x)\ne f(x))=P(H(T)\leq\lfloor T/2 \rfloor) $ ，其中 $ H(T) $ 表示 $ T $ 个基分类器中，预测正确的个数，即可得第一个等式。
  
