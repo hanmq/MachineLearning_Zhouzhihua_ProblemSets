@@ -68,15 +68,15 @@ ps.个人从直觉上BEP值和F1值是没有明确关系的，在讨论过程中
 ![4](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch2--%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/image/4.jpg)   
 其中 $ m_{i}^{+} $ 对应一个（或多个预测值相同的）正例，而 $ m_{j} $ 对应多个预测值相同的正负例 $ x^{+}\_{\ast},x^{-}\_{\ast} $ ，
 显然阴影部分的宽为 $ \frac{\sum_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m_{j}))} {m^{-}} $ , $ m_{i}^{+} $
-的纵坐标为 $ \frac{\sum_{x_{+}\in D^{+}}\parallel(f(x^{+})>f(m_{j}))}{m^{_+}} $ ，而 $ m_{j} $
-纵坐标为 $ \frac{\sum_{x_{+}\in D^{+}}\parallel(f(x^{+})>f(m_{j}))}{m^{_+}} + \frac{\sum_{x_{+}\in D^{+}}\parallel(f(x^{+})=f(m_{j}))}{m^{_+}} $ ，
+的纵坐标为 $ \frac{\sum_{x_{+}\in D^{+}}\parallel(f(x^{+})>f(m_{j}))}{m^{+}} $ ，而 $ m_{j} $
+纵坐标为 $ \frac{\sum_{x_{+}\in D^{+}}\parallel(f(x^{+})>f(m_{j}))}{m^{+}} + \frac{\sum_{x_{+}\in D^{+}}\parallel(f(x^{+})=f(m_{j}))}{m^{+}} $ ，
 于是阴影部分面积则为 $ \frac{(\sum_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m_{j})))\ast(\sum_{x^{+}\in D^{+}} (\frac{1}{2}\parallel(f(x^{+}) = f(m_{j}))+\parallel(f(x^{+}) > f(m_{j})))} {m^{-}m^{+}} $ 
 
-令 $ D^{-}_{|f(D^{-})|} $ 表示预测值唯一的负例集合，即原负例集合中以预测值 $ f(x) $ 去重，
-那么AUC值为： $ \sum_{m \in D^{-}_{|f(D^{-})|}}\frac{(\sum_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m)))\ast (\sum_{x^{+}\in D^{+}} (\frac{1}{2}\parallel(f(x^{+}) = f(m))+\parallel(f(x^{+}) > f(m)))} {m^{-}m^{+}} $ 
-其中 $ \sum_{m \in D^{-}_{|f(D^{-})|}} (\sum_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m))) \ast \sum_{x^{+}\in D^{+}} \parallel(f(x^{+}) = f(m)) = \sum_{x^{+}\in D^{+}}\sum_{x^{-}\in D^{-}} \parallel(f(x^{+}) = f(x^{-})) $
+令 $ D^{-}\_{|f(D^{-})|} $ 表示预测值唯一的负例集合，即原负例集合中以预测值 $ f(x) $ 去重，
+那么AUC值为： $ \sum\_{m \in D^{-}\_{|f(D^{-})|}}\frac{(\sum\_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m)))\ast (\sum\_{x^{+}\in D^{+}} (\frac{1}{2}\parallel(f(x^{+}) = f(m))+\parallel(f(x^{+}) > f(m)))} {m^{-}m^{+}} $ 
+其中 $ \sum_{m \in D^{-}\_{|f(D^{-})|}} (\sum_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m))) \ast \sum_{x^{+}\in D^{+}} \parallel(f(x^{+}) = f(m)) = \sum_{x^{+}\in D^{+}}\sum_{x^{-}\in D^{-}} \parallel(f(x^{+}) = f(x^{-})) $
 
-而 $ \sum_{m \in D^{-}_{|f(D^{-})|}} (\sum_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m))) \ast \sum_{x^{+}\in D^{+}} \parallel(f(x^{+}) > f(m)) = \sum_{x^{+}\in D^{+}}\sum_{x^{-}\in D^{-}} \parallel(f(x^{+}) > f(x^{-})) $
+而 $ \sum_{m \in D^{-}\_{|f(D^{-})|}} (\sum\_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m))) \ast \sum_{x^{+}\in D^{+}} \parallel(f(x^{+}) > f(m)) = \sum_{x^{+}\in D^{+}}\sum_{x^{-}\in D^{-}} \parallel(f(x^{+}) > f(x^{-})) $
 
 于是 $ AUC = \frac{1}{m^{+}m^{-}}\sum_{x^{+}\in D^{+}}\sum_{x^{-}\in D^{-}} (\parallel(f(x^{+}) > f(x^{-})) + \frac{1}{2}\parallel(f(x^{+}) = f(x^{-}))) $
 
