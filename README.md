@@ -1,26 +1,26 @@
 # 机器学习——周志华 （西瓜书）课后习题
 
-习题答案中有大量Latex公式，为了方便阅读推荐安装[MathJax](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)
+习题解答中有大量Latex公式，为了方便阅读推荐安装[MathJax](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)
 
 在[知乎上](https://zhuanlan.zhihu.com/c_1013850291887845376)也有同步更新，如何不能科学上网可以去知乎上看看。
 
 ---
 习题和涉及算法实现：
-### 第二章 模型评估与选择:   
+### 第二章 模型评估与选择
 [习题](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch2--%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/ch2%E4%B9%A0%E9%A2%98.md)
 
-### 第三章 线性模型:   
+### 第三章 线性模型
 [习题](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/ch3%E4%B9%A0%E9%A2%98.md)   
 
 [LR-逻辑回归](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch3--%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/3.3)   
 [LDA-线性判别分析](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch3--线性模型/3.5)
 
-### 第四章 决策树:   
+### 第四章 决策树   
 [习题](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch4--%E5%86%B3%E7%AD%96%E6%A0%91/ch4%E4%B9%A0%E9%A2%98.md)   
 
 [决策树](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch4--%E5%86%B3%E7%AD%96%E6%A0%91/4.3-4.4)
 
-### 第五章 神经网络:
+### 第五章 神经网络
 [习题](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch5--%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/ch5%E4%B9%A0%E9%A2%98.md)   
 
 [BP神经网络](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/tree/master/ch5--%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/5.5-5.6)   
@@ -47,3 +47,10 @@
 [习题](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch9--%E8%81%9A%E7%B1%BB/ch9%E4%B9%A0%E9%A2%98.md)   
 
 [KMeans](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch9--%E8%81%9A%E7%B1%BB/9.4-KMeans.py)   
+
+### 第十章 降维与度量学习
+
+[习题](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch10--%E9%99%8D%E7%BB%B4%E4%B8%8E%E5%BA%A6%E9%87%8F%E5%AD%A6%E4%B9%A0/ch10%E4%B9%A0%E9%A2%98.md)
+
+[KNN](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch10--%E9%99%8D%E7%BB%B4%E4%B8%8E%E5%BA%A6%E9%87%8F%E5%AD%A6%E4%B9%A0/10.1-KNN.py)   
+[PCA](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch10--%E9%99%8D%E7%BB%B4%E4%B8%8E%E5%BA%A6%E9%87%8F%E5%AD%A6%E4%B9%A0/10.6-PCA.py)
